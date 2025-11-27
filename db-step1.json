@@ -1,9 +1,38 @@
 {
- "departments": [
-    { "id": 1, "name": "Lending" },
-    { "id": 2, "name": "Funding" },
-    { "id": 3, "name": "Operations" },
-    { "id": 4, "name": "Engineering" }
- ],
- "basicInfo": []
+  "departments": [
+    {
+      "id": 1,
+      "name": "Lending"
+    },
+    {
+      "id": 2,
+      "name": "Funding"
+    },
+    {
+      "id": 3,
+      "name": "Operations"
+    },
+    {
+      "id": 4,
+      "name": "Engineering"
+    }
+  ],
+  "basicInfo": [
+    {
+      "id": "d5e1",
+      "fullName": "yoga Nugraha Pryandika",
+      "email": "yoga@gmail.com",
+      "role": "Ops",
+      "department": "Lending",
+      "employeeId": "LEN-001"
+    },
+    {
+      "id": "6fa2",
+      "fullName": "test 1",
+      "email": "YOga@gmail.com",
+      "role": "Ops",
+      "department": "Funding",
+      "employeeId": "FUN-001"
+    }
+  ]
 }

@@ -1,0 +1,226 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.roleToggle {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    background: $card-bg;
+    padding: 0.5rem;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.roleButton {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid transparent;
+    background: transparent;
+    color: $text-secondary;
+    border-radius: $radius-md;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover:not(:disabled) {
+        background: $hover-bg;
+        color: $text-primary;
+    }
+
+    &.active {
+        background: $primary;
+        color: white;
+        box-shadow: $shadow-md;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 1.5rem;
+        left: 25%;
+        right: 25%;
+        height: 2px;
+        background: $border;
+        z-index: 0;
+    }
+}
+
+.stepIndicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+
+    &.activeStep {
+        .stepNumber {
+            background: $primary;
+            color: white;
+            border-color: $primary;
+            transform: scale(1.1);
+        }
+
+        .stepLabel {
+            color: $primary;
+        }
+    }
+
+    &.completedStep {
+        .stepNumber {
+            background: $success;
+            color: white;
+            border-color: $success;
+        }
+    }
+}
+
+.stepNumber {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: $gray-50;
+    color: $text-secondary;
+    @include flex-center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: all $transition-base;
+    border: 2px solid $border;
+}
+
+.stepLabel {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $text-secondary;
+}
+
+.formCard {
+    @include card;
+    padding: 2.5rem;
+
+    h2 {
+        margin-bottom: 2rem;
+        color: $text-primary;
+    }
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: $text-primary;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.required {
+    color: $error;
+    margin-left: 0.25rem;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    font-size: 1rem;
+    transition: all $transition-base;
+    background: $input-bg;
+    color: $text-primary;
+    font-family: inherit;
+
+    &:focus {
+        outline: none;
+        border-color: $primary;
+        box-shadow: 0 0 0 3px $primary-alpha;
+    }
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.employeeIdDisplay {
+    padding: 1rem;
+    background: $primary-alpha;
+    border-radius: $radius-md;
+    margin-bottom: 1.5rem;
+    color: $text-primary;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    button {
+        flex: 1;
+    }
+}
+
+.submitBtn {
+    @include btn-primary;
+    width: 100%;
+}
+
+.backBtn {
+    @include btn-secondary;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .formCard {
+        padding: 1.5rem;
+    }
+
+    .steps {
+        gap: 1rem;
+    }
+
+    .roleToggle {
+        max-width: 100%;
+    }
+}

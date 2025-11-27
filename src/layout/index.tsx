@@ -12,7 +12,7 @@ const Layout = () => {
             <span className={styles.logoText}>Employee Wizard</span>
           </Link>
           <div className={styles.navLinks}>
-            <Link to="/wizard?role=admin" className={styles.navLink}>
+            <Link to="/wizards?role=admin" className={styles.navLink}>
               Add Employee
             </Link>
             <Link to="/employees" className={styles.navLink}>

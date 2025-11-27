@@ -1,0 +1,94 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: $text-primary;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dropzone {
+    border: 2px dashed $border;
+    border-radius: 0.75rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: $input-bg;
+
+    &:hover {
+        border-color: $primary;
+        background: $hover-bg;
+    }
+
+    &.dragging {
+        border-color: $primary;
+        background: $primary-alpha;
+        transform: scale(1.02);
+    }
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    color: $text-secondary;
+}
+
+.text {
+    font-size: 1rem;
+    color: $text-primary;
+    margin-bottom: 0.5rem;
+}
+
+.subtext {
+    font-size: 0.875rem;
+    color: $text-secondary;
+}
+
+.preview {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: $card-bg;
+    padding: 1rem;
+}
+
+.image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 0.5rem;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+.removeButton {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+    background: $error;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: $error-dark;
+        transform: translateY(-1px);
+    }
+}
+
+.hiddenInput {
+    display: none;
+}
