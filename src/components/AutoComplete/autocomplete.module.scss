@@ -1,0 +1,79 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: $text-primary;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.required {
+    color: $error;
+    margin-left: 0.25rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    font-size: 1rem;
+    transition: all $transition-base;
+    background: $input-bg;
+    color: $text-primary;
+
+    &:focus {
+        outline: none;
+        border-color: $primary;
+        box-shadow: 0 0 0 3px $primary-alpha;
+    }
+}
+
+.loading {
+    position: absolute;
+    right: 1rem;
+    top: 2.5rem;
+    font-size: 0.875rem;
+    color: $text-secondary;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 0.25rem;
+    background: $card-bg;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    list-style: none;
+    padding: 0.5rem 0;
+}
+
+.item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color $transition-fast;
+    color: $text-primary;
+
+    &:hover,
+    &.highlighted {
+        background-color: $hover-bg;
+    }
+
+    &:active {
+        background-color: $active-bg;
+    }
+}

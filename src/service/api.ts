@@ -4,6 +4,12 @@ import type { BasicInfo, Details } from "../types/employee";
 const apiStep1 = 'http://localhost:4001';
 const apiStep2 = 'http://localhost:4002';
 
+export const API_ENDPOINTS = {
+    DEPARTMENTS_SEARCH: `${apiStep1}/departments?name_like=`,
+    ROLES_SEARCH: `${apiStep2}/roles?name_like=`,
+    LOCATIONS_SEARCH: `${apiStep2}/locations?name_like=`
+};
+
 export const employeeService = {
     getAllBasicInfo: async () => {
         const response = await axios.get<BasicInfo[]>(`${apiStep1}/basicInfo`);

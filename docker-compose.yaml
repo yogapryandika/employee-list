@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev -- --host
+    restart: unless-stopped
+
+  api1:
+    build: .
+    ports:
+      - "4001:4001"
+    volumes:
+      - ./db-step1.json:/app/db-step1n.json
+    command: npm run api1 -- --host 0.0.0.0
+    restart: unless-stopped
+
+  api2:
+    build: .
+    ports:
+      - "4002:4002"
+    volumes:
+      - ./db-step2.json:/app/db-step2.json
+    command: npm run api2 -- --host 0.0.0.0
+    restart: unless-stopped

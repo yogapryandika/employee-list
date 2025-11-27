@@ -5,7 +5,7 @@ import { employeeService } from '../../service/api';
 
 const ITEMS_PER_PAGE = 6;
 
-export const EmployeePage: React.FC = () => {
+const EmployeePage: React.FC = () => {
     const [employees, setEmployees] = useState<Employee[]>([]);
     const [allEmployees, setAllEmployees] = useState<Employee[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -181,3 +181,5 @@ export const EmployeePage: React.FC = () => {
         </div>
     )
 }
+
+export default EmployeePage;
