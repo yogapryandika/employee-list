@@ -1,0 +1,73 @@
+@use './variables' as *;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin card {
+    background: $card-bg;
+    border-radius: $radius-lg;
+    padding: 2rem;
+    box-shadow: $shadow-md;
+    border: 1px solid $border;
+
+    &:hover {
+        box-shadow: $shadow-lg;
+        border-color: $gray-400;
+    }
+}
+
+@mixin btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: all $transition-base;
+    text-decoration: none;
+    font-family: inherit;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+@mixin btn-primary {
+    @include btn-base;
+    background: $primary;
+    color: white;
+
+    &:hover:not(:disabled) {
+        background: $primary-dark;
+        transform: translateY(-1px);
+    }
+
+    &:active:not(:disabled) {
+        background: $primary-dark;
+        transform: translateY(0);
+    }
+}
+
+@mixin btn-secondary {
+    @include btn-base;
+    background: $gray-200;
+    color: $text-primary;
+
+    &:hover:not(:disabled) {
+        background: $gray-300;
+        color: $gray-900;
+    }
+}
