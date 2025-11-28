@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import type { UserRole, WizardFormData } from '../../types/employee';
-import { submitEmployee, type SubmitProgress } from '../../utils/submitEmployees';
+import  submitEmployee, { type SubmitProgress } from '../../utils/submitEmployees';
 import { clearDraft, loadDraft, saveDraft } from '../../utils/localStorage';
 import styles from './wizards.module.scss';
 import Step1Form from './Form/Step1Form';
